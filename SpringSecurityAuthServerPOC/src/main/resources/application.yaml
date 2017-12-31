@@ -1,0 +1,17 @@
+spring:
+logging:
+  level:
+#    org.springframework.web: DEBUG
+    org.springframework.security.ldap.authentication.ad: DEBUG
+ad:
+  domain: muppets.dnsalias.org
+  url: ldap://piggy.muppets.dnsalias.org:3268/
+  rootDn: DC=muppets,DC=dnsalias,DC=org
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
